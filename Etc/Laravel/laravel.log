@@ -1,0 +1,8 @@
+[2023-09-11 01:07:04] local.ERROR: Command "Artisan" is not defined. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"Artisan\" is not defined. at /home/al_user_09/laravel_workspace/sample_laravel/vendor/symfony/console/Application.php:725)
+[stacktrace]
+#0 /home/al_user_09/laravel_workspace/sample_laravel/vendor/symfony/console/Application.php(262): Symfony\\Component\\Console\\Application->find()
+#1 /home/al_user_09/laravel_workspace/sample_laravel/vendor/symfony/console/Application.php(174): Symfony\\Component\\Console\\Application->doRun()
+#2 /home/al_user_09/laravel_workspace/sample_laravel/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(201): Symfony\\Component\\Console\\Application->run()
+#3 /home/al_user_09/laravel_workspace/sample_laravel/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
+#4 {main}
+"} 
