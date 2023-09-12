@@ -70,6 +70,7 @@ class AppUserController extends Controller
         return view('app_user', ['app_user' => $app_user]);
     }
 
+    /*
     public function play_chara_gacha($id)
     {
         $app_user = AppUser::find($id);
@@ -85,5 +86,26 @@ class AppUserController extends Controller
 
         return view('play_chara_gacha', ['result_string' => $result_string]);
     }
-}
+    */
+    // 1000倍ガチャ
+    public function play_chara_gacha_1000($id)
+    {
+        $app_user = AppUser::find($id);
+        $has_chara_flag = $app_user->has_chara_flag;
+        $result_string = "";
 
+        $gachaCount = 1000;
+        for ($i = 0; $i < $gachaCount; $i++) {
+            $rand_num = mt_rand(1, 10000);
+            $jouyo = $rand_num % 32;
+            $result_string = $result_string.$jouyo.",";
+            $jouyo_flag = 1 << $jouyo;
+            $has_chara_flag = $has_chara_flag | $jouyo_flag;
+        }
+        $app_user->has_chara_flag = $has_chara_flag;
+        $app_user->save();
+
+        return view('play_chara_gacha', ['result_string' => $result_string]);
+    }
+
+}
