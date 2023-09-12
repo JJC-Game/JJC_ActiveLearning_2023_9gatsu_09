@@ -62,4 +62,11 @@ class AppUserController extends Controller
     {
         //
     }
+
+    // ユーザー情報の表示
+    public function app_user($id)
+    {
+        $app_user = AppUser::find($id);
+        return view('app_user', ['app_user' => $app_user]);
+    }
 }
