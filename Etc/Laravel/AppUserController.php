@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class AppUserController extends Controller
 {
-    public $ITEM_ID_MAX = 5;
+    public $ITEM_ID_MAX = 1000;
 
     public function app_user($id)
     {
